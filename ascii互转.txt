@@ -12,3 +12,15 @@ ascii值转字符：
 	chr(65)   ==>  B
 	
 	unicode码可以直接通过python输出：'\u4e2d\u6587'  ==> 中国
+	
+	
+中文转UNICODE码：
+	"测试".encode("utf-8")  ==> 将中文转unicode
+	'ABC'.encode('ascii')   ==> 字母转ascii
+	
+	#反转
+	b'ABC'.decode('ascii')  ==> 转为字符
+	b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8') ==> 结果：中文
+	
+	#忽略无效字节，加上errors='ignonre'
+	b'\xe4\xb8\xad\xff'.decode('utf-8', errors='ignore')
